@@ -15,12 +15,13 @@ For this code to work you need an Umbraco installation and The Skybrud.WebApi.Js
 
 
 ## How to
-When creating the backend part of a [Sky-SPA](https://github.com/skybrud/sky-spa) you need to take care of 4 different parts.
+When creating the backend part of a [Sky-SPA](https://github.com/skybrud/sky-spa) you need to take care of 4/5 different parts.
 
 1. API´s connecting [Sky-SPA](https://github.com/skybrud/sky-spa) with Umbraco
 2. Cache Invalidation (what to do when you make a new deploy of you JS files or what to do when the editor creates new content)
 3. Initial response (main cshtml-template for the [Sky-SPA](https://github.com/skybrud/sky-spa))
-4. How to send Grid-properties to [Sky-SPA](https://github.com/skybrud/sky-spa)
+4. How to send Grid-properties to [Sky-SPA](https://github.com/skybrud/sky-spa) (optional)
+5. Controllers, Models and Views - Connecting it all
 
 
 ## 1. API´s
