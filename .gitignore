@@ -4,3 +4,5 @@ src/Skybrud.Umbraco.GridElements.Web/obj/
 src/Skybrud.Umbraco.GridElements/obj/
 src/Skybrud.Umbraco.GridElements.Web/bin/
 src/Skybrud.Umbraco.GridElements/App_Data/NuGetBackup/
+src/Skybrud.Umbraco.Spa/packages/
+src/Skybrud.Umbraco.Spa/Skybrud.Umbraco.Spa.Core/obj/Debug/
