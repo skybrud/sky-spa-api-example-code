@@ -1,12 +1,16 @@
-# sky-spa-api
-C# API for Sky-SPA
+# Sky-spa-api-example-code
 
 This repo is only containing examplecode for the API-part of a [Sky-SPA](https://github.com/skybrud/sky-spa)
 
+## Intro
 <!-- short intro to Sky-SPA comes here -->
 
+<!-- list nuget dependencies -->
+## NuGet Dependencies
 
-When creating the backend part of a [Sky-SPA](https://github.com/skybrud/sky-spa) you need to take care of x different parts.
+
+
+When creating the backend part of a [Sky-SPA](https://github.com/skybrud/sky-spa) you need to take care of 4 different parts.
 
 1. API´s connecting [Sky-SPA](https://github.com/skybrud/sky-spa) with Umbraco content
 2. Cache Invalidation (what to do when you make a new deploy of you JS files or what to do when the editor created new content)
