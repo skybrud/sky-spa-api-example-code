@@ -51,3 +51,20 @@ Your Umbraco installation is making the first request, when the user hits the si
 
 
 ## 4. Convert Griddata
+If you want to use the Umbraco Grid Datatype for your doctypes, you will need to convert the data into models, which can then be returned to Sky-SPA as serialized json-objects. You can read alot more about this on the GitHub page for [Skybrud.Umbraco.GridData](https://github.com/skybrud/Skybrud.Umbraco.GridData).
+
+First of all you need to create a SpaGridJsonConverter which you will decorate your grid-properties with. You can make your own or use the [SpaGridJsonConverter](https://github.com/skybrud/sky-spa-api-example-code/blob/master/src/Skybrud.Umbraco.Spa/api/Grid/Spa/SpaGridJsonConverter.cs) in this examplecode. When you create your models containing grid-properties, you will have to decorate the properties like this:
+
+```csharp
+[JsonConverter(typeof(SpaGridJsonConverter))]
+public GridDataModel Grid { get; private set; }
+```
+
+Afterwards you need to create a solution specific grid value converter. This is used to tell the solution how to parse the data from the different grid-datatypes (grid-elements). You can find an [example of a grid-converter here](https://github.com/skybrud/sky-spa-api-example-code/blob/master/src/Skybrud.Umbraco.Spa/api/Grid/SolutionSpecificGridConverter.cs). Then you create [grid-value-converters](https://github.com/skybrud/sky-spa-api-example-code/tree/master/src/Skybrud.Umbraco.Spa/api/Models/Grid) for each of your grid-elements and connect them with your grid-converter.
+
+Least you need to register your SpaGridJsonConverter in your [Application startup file](https://github.com/skybrud/sky-spa-api-example-code/blob/master/src/Skybrud.Umbraco.Spa/api/Startup.cs)
+
+```csharp
+//Adding Custom GridConverter
+GridContext.Current.Converters.Add(new SolutionSpecificGridConverter());
+```
