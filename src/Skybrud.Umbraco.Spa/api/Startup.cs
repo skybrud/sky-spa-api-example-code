@@ -1,5 +1,7 @@
 ﻿using System;
+using Skybrud.Umbraco.GridData;
 using SkybrudSpaExample.EventHandlers.Spa;
+using SkybrudSpaExample.Grid;
 using Umbraco.Core;
 
 namespace SkybrudSpaExample
@@ -26,6 +28,9 @@ namespace SkybrudSpaExample
                 if (!_started)
                 {
                     _started = true;
+
+                    //Adding Custom GridConverter
+                    GridContext.Current.Converters.Add(new SolutionSpecificGridConverter());
 
                     _assetsWatcher = new AssetsWatcher();       // Watches pt. scripts-folder, to handle any js updates
                     _contentWatcher = new ContentWatcher();     // Wathces if content changes

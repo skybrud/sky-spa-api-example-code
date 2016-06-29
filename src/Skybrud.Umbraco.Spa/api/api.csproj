@@ -154,6 +154,10 @@
       <HintPath>..\packages\semver.1.1.2\lib\net45\Semver.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Skybrud.Umbraco.GridData, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Skybrud.Umbraco.GridData.1.5.1\lib\net45\Skybrud.Umbraco.GridData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Skybrud.WebApi.Json, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Skybrud.WebApi.Json.1.0.3\lib\Skybrud.WebApi.Json.dll</HintPath>
       <Private>True</Private>
@@ -262,6 +266,11 @@
     <Compile Include="EventHandlers\Spa\AssetsWatcher.cs" />
     <Compile Include="EventHandlers\Spa\ContentWatcher.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Grid\SolutionSpecificGridConverter.cs" />
+    <Compile Include="Grid\Spa\SpaGridJsonConverter.cs" />
+    <Compile Include="Models\Grid\GridControlImageValue.cs" />
+    <Compile Include="Models\Grid\GridControlQuoteValue.cs" />
+    <Compile Include="Models\Media\MediaItem.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\Spa\Master.cs" />
     <Compile Include="Models\Spa\NavItem.cs" />
@@ -272,6 +281,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

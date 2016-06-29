@@ -10,3 +10,5 @@ src/Skybrud.Umbraco.Spa/SkySpaWebExample/obj/
 src/Skybrud.Umbraco.Spa/Skybrud.Umbraco.Spa.Core/bin/Debug/
 src/Skybrud.Umbraco.Spa/Skybrud.Umbraco.Spa.Core/bin/Release/
 src/Skybrud.Umbraco.Spa/Skybrud.Umbraco.Spa.Core/obj/Release/
+src/Skybrud.Umbraco.Spa/api/bin/Release/
+src/Skybrud.Umbraco.Spa/api/obj/
