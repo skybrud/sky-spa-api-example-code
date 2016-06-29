@@ -1,0 +1,33 @@
+﻿@using Namespace.Extensions
+@inherits UmbracoViewPage<Namespace.Models.Website.Master>
+@{
+    Layout = null;
+}
+<!doctype html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1" id="viewport">
+    <base href="/" />
+    <title ng-bind="pageTitle"></title>
+    <link rel="shortcut icon" href="/img/6168ro/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css"><!-- remember cachebusting -->
+</head>
+<body>
+    
+    <header class="mobile-header">
+        <a href="/" style="color:transparent;"><sky-svg>footerlogo</sky-svg></a>
+    </header>
+
+    <ui-view class="view"></ui-view>
+
+    <div class="mobile-footer">
+        <footer class="mobile-left" ng-include="'/layout/FooterLeft.html'"></footer>
+    </div>
+
+    @RenderBody()
+
+    @Html.Partial("~/Views/Partials/Settings.cshtml")
+
+    <script src="@Html.GetCacheableUrl("/scripts/6168ro/scripts.js")" async></script>
+</body>
+</html>
