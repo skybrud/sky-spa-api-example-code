@@ -50,4 +50,55 @@ Sky-SPA has build-in cacheinvalidation for both JS-assets and changes in Umbraco
 Your Umbraco installation is making the first request, when the user hits the site. All direct requests gives the user the same template, and Sky-SPA takes over and fetches the needed data via the API´s. You can find an example of a [start-template her](https://github.com/skybrud/sky-spa-api-example-code/blob/master/src/Skybrud.Umbraco.Spa/web/Views/StartView.cshtml). The [@Html.GetCacheableUrl extension you can find here](https://github.com/skybrud/sky-spa-api-example-code/blob/master/src/Skybrud.Umbraco.Spa/api/Extensions/HtmlHelperExtensions.cs). This extension handles cachebusting on assets.
 
 
-## 4. Convert Griddata
+## 4. Convert Griddata (optional)
+If you want to use the Umbraco Grid Datatype for your doctypes, you will need to convert the data into models, which can then be returned to Sky-SPA as serialized json-objects. You can read alot more about this on the GitHub page for [Skybrud.Umbraco.GridData](https://github.com/skybrud/Skybrud.Umbraco.GridData).
+
+First of all you need to create a SpaGridJsonConverter which you will decorate your grid-properties with. You can make your own or use the [SpaGridJsonConverter](https://github.com/skybrud/sky-spa-api-example-code/blob/master/src/Skybrud.Umbraco.Spa/api/Grid/Spa/SpaGridJsonConverter.cs) in this examplecode. When you create your models containing grid-properties, you will have to decorate the properties like this:
+
+```csharp
+[JsonConverter(typeof(SpaGridJsonConverter))]
+public GridDataModel Grid { get; private set; }
+```
+
+Afterwards you need to create a solution specific grid value converter. This is used to tell the solution how to parse the data from the different grid-datatypes (grid-elements). You can find an [example of a grid-converter here](https://github.com/skybrud/sky-spa-api-example-code/blob/master/src/Skybrud.Umbraco.Spa/api/Grid/SolutionSpecificGridConverter.cs). Then you create [grid-value-converters](https://github.com/skybrud/sky-spa-api-example-code/tree/master/src/Skybrud.Umbraco.Spa/api/Models/Grid) for each of your grid-elements and connect them with your grid-converter.
+
+Least you need to register your SpaGridJsonConverter in your [Application startup file](https://github.com/skybrud/sky-spa-api-example-code/blob/master/src/Skybrud.Umbraco.Spa/api/Startup.cs)
+
+```csharp
+//Adding Custom GridConverter
+GridContext.Current.Converters.Add(new SolutionSpecificGridConverter());
+```
+
+## 5. Controllers, Models and Views
+If you made it this far, you are now ready to create your controllers, models and views, so that Umbraco can return some data for your SPA. 
+
+### Views
+<!-- 
+skriv noget om at der skal oprettes views som normalt. Disse navngivninger skal oprettes som angular-templates i SPA´en med samme navn. F.eks. frontpage.cshtml -> frontpage.html
+-->
+
+### Models
+<!--
+noget med at der skal oprettes models for hver doctype. Husk at dekorere med [JsonProperty("jsonnavnpåproperty")]
+1. opret properties
+2. opret constructor
+3. opret static metode
+-->
+
+### Controllers
+<!--
+nedarv fra SkyController
+-->
+```csharp
+using System.Web.Mvc;
+using coc.Models.Coc;
+using Umbraco.Web.Models;
+
+namespace SkybrudSpaExample.Controllers.Mvc {
+    public class NewsController : SkyController {
+        public override ActionResult Index(RenderModel model) {
+            return View(StartView.GetFromContent(CurrentPage));
+        }
+    }
+}
+```
