@@ -6,6 +6,7 @@ This repo is only containing examplecode for the API-part of a [Sky-SPA](https:/
 [Sky-SPA](https://github.com/skybrud/sky-spa) is an opensource Angular application for creating SPA (Single Page Application). SPA means a website with no full page request other than the initial request (ex. [http://www.ess-food.com/](http://www.ess-food.com/)). The rest of the pagerequests is done by routing in Angular and API-calls to the services behind. This examplecode shows how to make these APIs and connect them to an Umbraco instance.
 
 Other examples of Sky-SPA´s:
+
 1. [made.dk](http://www.made.dk/)
 2. [roskilde-gymnasium.dk](http://roskilde-gymnasium.dk/)
 3. [Danish Crowns Annual Report 2015/16](http://annualreport2015.danishcrown.dk/)
