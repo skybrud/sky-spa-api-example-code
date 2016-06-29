@@ -261,6 +261,7 @@
     <Compile Include="Controllers\Api\Spa\SettingsApiController.cs" />
     <Compile Include="EventHandlers\Spa\AssetsWatcher.cs" />
     <Compile Include="EventHandlers\Spa\ContentWatcher.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\Spa\Master.cs" />
     <Compile Include="Models\Spa\NavItem.cs" />
