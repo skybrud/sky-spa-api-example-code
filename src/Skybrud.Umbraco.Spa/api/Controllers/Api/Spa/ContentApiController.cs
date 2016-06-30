@@ -19,10 +19,8 @@ namespace SkybrudSpaExample.Controllers.Api.Spa
             HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
 
             url = HttpUtility.UrlDecode(url);
-
             IPublishedContent content;
-
-
+            
             if (url.IsPreviewUrl())
             {
                 // get draft content

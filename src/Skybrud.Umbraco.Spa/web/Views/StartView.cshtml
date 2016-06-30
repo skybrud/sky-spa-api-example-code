@@ -9,23 +9,27 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1" id="viewport">
     <base href="/" />
     <title ng-bind="pageTitle"></title>
-    <link rel="shortcut icon" href="/img/6168ro/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/style.css"><!-- remember cachebusting -->
+    <link rel="stylesheet" href="@Html.GetCachableUrl("/css/style.css")">
 </head>
 <body>
-    
-    <header class="mobile-header">
-        <a href="/" style="color:transparent;"><sky-svg>footerlogo</sky-svg></a>
-    </header>
+    <!-- spinner starting up before NG takes over -->
+    <div class="spinner">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-24.3 26.7 24.1 24.1" enable-background="new -24.3 26.7 24.1 24.1" class="svg-spinner">
+            <circle fill="#515048" cx="-22.2" cy="38.7" r="1.8"></circle>
+            <circle fill="#515048" cx="-19.3" cy="31.7" r="1.8"></circle>
+            <circle fill="#515048" cx="-12.3" cy="28.8" r="1.8"></circle>
+            <circle fill="#515048" cx="-5.3" cy="31.7" r="1.8"></circle>
+        </svg>
+    </div>
 
-    <ui-view class="view"></ui-view>
-
-    <div class="mobile-footer">
-        <footer class="mobile-left" ng-include="'/layout/FooterLeft.html'"></footer>
+    <!-- Sky-SPA content -->
+    <div class="all-wrap">
+        <ui-view class="view"></ui-view>
     </div>
 
     @RenderBody()
 
+    <!-- JS-object containing settings from Umbraco -->
     @Html.Partial("~/Views/Partials/Settings.cshtml")
 
     <script src="@Html.GetCacheableUrl("/scripts/6168ro/scripts.js")" async></script>
