@@ -261,19 +261,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\Api\Spa\ContentApiController.cs" />
     <Compile Include="Controllers\Api\Spa\NavigationApiController.cs" />
     <Compile Include="Controllers\Api\Spa\SettingsApiController.cs" />
     <Compile Include="Controllers\Mvc\SkyController.cs" />
     <Compile Include="EventHandlers\Spa\AssetsWatcher.cs" />
     <Compile Include="EventHandlers\Spa\ContentWatcher.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Grid\SolutionSpecificGridConverter.cs" />
     <Compile Include="Grid\Spa\SpaGridJsonConverter.cs" />
     <Compile Include="Models\Grid\GridControlImageValue.cs" />
     <Compile Include="Models\Grid\GridControlQuoteValue.cs" />
     <Compile Include="Models\Media\MediaItem.cs" />
     <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\SolutionSpecificModels\Frontpage.cs" />
     <Compile Include="Models\SolutionSpecificModels\StartView.cs" />
+    <Compile Include="Models\SolutionSpecificModels\Subpage.cs" />
     <Compile Include="Models\Spa\Master.cs" />
     <Compile Include="Models\Spa\NavItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
